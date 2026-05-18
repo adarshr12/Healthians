@@ -343,25 +343,112 @@ section{padding:80px 0;}
 .vanity-card{background:#fff;border-radius:10px;padding:16px;box-shadow:0 2px 8px rgba(0,0,0,.06);border-top:3px solid #dc2626;}
 .vanity-name{font-size:.82rem;font-weight:600;color:#dc2626;margin-bottom:4px;}
 .vanity-why{font-size:.75rem;color:var(--g55);line-height:1.4;}
-/* FUNNELS */
-#funnels{background:#0d1b2a;padding:80px 0;}
-/* COHORTS */
-.cohort-card{background:var(--f7);border-radius:14px;padding:24px;}
-.cohort-card-title{font-size:.9rem;font-weight:600;color:var(--navy);margin-bottom:6px;}
-.cohort-card-desc{font-size:.78rem;color:var(--g55);margin-bottom:16px;line-height:1.4;}
-.cohort-table{width:100%;border-collapse:collapse;font-size:.75rem;}
-.cohort-table th{background:var(--navy);color:#fff;padding:7px 10px;text-align:center;font-size:.7rem;}
-.cohort-table th:first-child{text-align:left;}
-.cohort-table td{padding:7px 10px;border-bottom:1px solid #e8e8e8;text-align:center;}
-.cohort-table td:first-child{text-align:left;font-weight:600;color:var(--navy);}
-.cohort-table .c-hi{background:#d1fae5;color:#065f46;font-weight:700;border-radius:4px;}
-.cohort-table .c-mid{background:#fef9c3;color:#713f12;font-weight:600;border-radius:4px;}
-.cohort-table .c-lo{background:#fee2e2;color:#991b1b;border-radius:4px;}
-.cohort-table .c-na{color:#ccc;}
-.ckpi{background:var(--bg);border-radius:10px;padding:16px;text-align:center;}
-.ckpi-val{font-family:'DM Serif Display',serif;font-size:1.6rem;color:var(--teal);}
-.ckpi-label{font-size:.72rem;color:var(--g55);margin-top:4px;}
-.ckpi-note{font-size:.65rem;color:#aaa;font-style:italic;margin-top:2px;}
+!-- 17. FUNNELS -->
+<section id="funnels" style="background:#0d1b2a;padding:80px 0;">
+<div class="wrap">
+<p class="sec-label" style="color:var(--teal);">Section 17</p>
+<h2 class="sec-title" style="color:#fff;margin-bottom:8px;">Conversion Funnels</h2>
+<p style="color:rgba(255,255,255,.6);font-size:.88rem;max-width:640px;line-height:1.6;margin-bottom:48px;">Four funnels — each answers a different question. Numbers are directional estimates based on industry benchmarks, not Healthians internal data.</p>
+
+<!-- AARRR -->
+<div style="font-family:'DM Mono',monospace;font-size:.72rem;color:var(--teal);text-transform:uppercase;letter-spacing:2px;margin-bottom:32px;">AARRR — Full User Lifecycle</div>
+<div style="display:flex;gap:48px;align-items:flex-start;margin-bottom:56px;flex-wrap:wrap;">
+<!-- Funnel shape -->
+<div style="flex:1;min-width:280px;display:flex;flex-direction:column;align-items:center;gap:0;">
+<!-- Stage 1 -->
+<div style="width:100%;background:#028090;border-radius:6px 6px 0 0;padding:14px 20px;text-align:center;position:relative;">
+<div style="color:#fff;font-weight:700;font-size:.88rem;">ACQUISITION</div>
+<div style="color:rgba(255,255,255,.7);font-size:.7rem;margin-top:2px;">User installs the app</div>
+<div style="color:#fff;font-family:'DM Mono',monospace;font-size:1.2rem;font-weight:700;margin-top:4px;">100%</div>
+</div>
+<div style="width:100%;overflow:hidden;height:14px;"><div style="width:100%;height:28px;background:#028090;clip-path:polygon(0 0,100% 0,94% 100%,6% 100%);"></div></div>
+<!-- Stage 2 -->
+<div style="width:88%;background:#0994a3;padding:14px 20px;text-align:center;">
+<div style="color:#fff;font-weight:700;font-size:.88rem;">ACTIVATION</div>
+<div style="color:rgba(255,255,255,.7);font-size:.7rem;margin-top:2px;">First booking completed</div>
+<div style="color:#fff;font-family:'DM Mono',monospace;font-size:1.2rem;font-weight:700;margin-top:4px;">25–35%</div>
+<div style="color:#fca5a5;font-size:.65rem;">65–75% drop here</div>
+</div>
+<div style="width:88%;overflow:hidden;height:14px;"><div style="width:100%;height:28px;background:#0994a3;clip-path:polygon(0 0,100% 0,94% 100%,6% 100%);"></div></div>
+<!-- Stage 3 -->
+<div style="width:76%;background:#f4a261;padding:14px 20px;text-align:center;">
+<div style="color:#fff;font-weight:700;font-size:.88rem;">RETENTION</div>
+<div style="color:rgba(255,255,255,.8);font-size:.7rem;margin-top:2px;">Books again within the right window</div>
+<div style="color:#fff;font-family:'DM Mono',monospace;font-size:.82rem;font-weight:700;margin-top:4px;">Chronic: 40%+ at D90</div>
+<div style="color:rgba(255,255,255,.8);font-size:.65rem;">Preventive: 30%+ at D365</div>
+</div>
+<div style="width:76%;overflow:hidden;height:14px;"><div style="width:100%;height:28px;background:#f4a261;clip-path:polygon(0 0,100% 0,94% 100%,6% 100%);"></div></div>
+<!-- Stage 4 -->
+<div style="width:64%;background:#e07b3a;padding:14px 20px;text-align:center;">
+<div style="color:#fff;font-weight:700;font-size:.88rem;">REFERRAL</div>
+<div style="color:rgba(255,255,255,.8);font-size:.7rem;margin-top:2px;">Adds family or refers a friend</div>
+<div style="color:#fff;font-family:'DM Mono',monospace;font-size:1.2rem;font-weight:700;margin-top:4px;">&lt;10%</div>
+<div style="color:rgba(255,255,255,.7);font-size:.65rem;">₹500 incentive available</div>
+</div>
+<div style="width:64%;overflow:hidden;height:14px;"><div style="width:100%;height:28px;background:#e07b3a;clip-path:polygon(0 0,100% 0,94% 100%,6% 100%);"></div></div>
+<!-- Stage 5 -->
+<div style="width:52%;background:#22c55e;border-radius:0 0 6px 6px;padding:14px 20px;text-align:center;">
+<div style="color:#fff;font-weight:700;font-size:.88rem;">REVENUE</div>
+<div style="color:rgba(255,255,255,.8);font-size:.7rem;margin-top:2px;">Paid bookings — repeat, cross-sell</div>
+<div style="color:#fff;font-family:'DM Mono',monospace;font-size:.9rem;font-weight:700;margin-top:4px;">AOV ~₹1,250</div>
+<div style="color:rgba(255,255,255,.7);font-size:.65rem;">₹263Cr FY25 operating revenue</div>
+</div>
+</div>
+<!-- Annotations -->
+<div style="display:flex;flex-direction:column;justify-content:space-around;gap:16px;padding-top:8px;min-width:200px;flex:0 0 220px;">
+<div style="font-size:.75rem;color:rgba(255,255,255,.55);line-height:1.5;padding-left:12px;border-left:2px solid rgba(2,128,144,.5);">Google Search, social ads, partner referral, word of mouth</div>
+<div style="font-size:.75rem;color:rgba(255,255,255,.55);line-height:1.5;padding-left:12px;border-left:2px solid rgba(2,128,144,.4);">Drop: home screen clarity, pricing, slot availability, coupon experience</div>
+<div style="font-size:.75rem;color:rgba(255,255,255,.55);line-height:1.5;padding-left:12px;border-left:2px solid rgba(244,162,97,.5);">Drop: no reminder at right time, switched to competitor, forgot the app</div>
+<div style="font-size:.75rem;color:rgba(255,255,255,.55);line-height:1.5;padding-left:12px;border-left:2px solid rgba(224,123,58,.5);">Family section is in the Profile tab — easy to miss</div>
+<div style="font-size:.75rem;color:rgba(255,255,255,.55);line-height:1.5;padding-left:12px;border-left:2px solid rgba(34,197,94,.5);">Grow by: multi-service per session, family account, consultation post-report</div>
+</div>
+</div>
+
+<!-- SERVICE FUNNELS -->
+<div style="font-family:'DM Mono',monospace;font-size:.72rem;color:var(--teal);text-transform:uppercase;letter-spacing:2px;margin-bottom:24px;">Service Funnels</div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:48px;">
+<div style="background:rgba(255,255,255,.04);border:1px solid rgba(2,128,144,.3);border-radius:14px;overflow:hidden;">
+<div style="background:rgba(2,128,144,.35);padding:14px 18px;border-bottom:1px solid rgba(255,255,255,.08);"><div style="color:var(--teal);font-size:.62rem;font-family:'DM Mono',monospace;">SERVICE 01</div><div style="color:#fff;font-weight:700;font-size:.9rem;margin-top:3px;">🩸 Blood Test</div></div>
+<div style="padding:10px 16px;border-bottom:1px solid rgba(255,255,255,.05);"><div style="display:flex;justify-content:space-between;margin-bottom:5px;"><span style="color:#fff;font-size:.75rem;">Home screen</span><span style="color:#fff;font-family:'DM Mono',monospace;font-size:.75rem;">100%</span></div><div style="height:24px;background:rgba(2,128,144,1);border-radius:3px;width:100%;"></div></div>
+<div style="padding:10px 16px;border-bottom:1px solid rgba(255,255,255,.05);"><div style="display:flex;justify-content:space-between;margin-bottom:5px;"><span style="color:#fff;font-size:.75rem;">Service tile tapped</span><span style="color:#fcd34d;font-family:'DM Mono',monospace;font-size:.75rem;">~55%</span></div><div style="height:24px;background:rgba(2,128,144,.8);border-radius:3px;width:55%;"></div></div>
+<div style="padding:10px 16px;border-bottom:1px solid rgba(255,255,255,.05);"><div style="display:flex;justify-content:space-between;margin-bottom:5px;"><span style="color:#fff;font-size:.75rem;">Test added to basket</span><span style="color:#fcd34d;font-family:'DM Mono',monospace;font-size:.75rem;">~40%</span></div><div style="height:24px;background:rgba(2,128,144,.65);border-radius:3px;width:40%;"></div></div>
+<div style="padding:10px 16px;border-bottom:1px solid rgba(255,255,255,.05);"><div style="display:flex;justify-content:space-between;margin-bottom:5px;"><span style="color:#fff;font-size:.75rem;">Slot selected</span><span style="color:#fcd34d;font-family:'DM Mono',monospace;font-size:.75rem;">~30%</span></div><div style="height:24px;background:rgba(2,128,144,.5);border-radius:3px;width:30%;"><span style="color:#fca5a5;font-size:.6rem;padding:0 6px;line-height:24px;">No early slot</span></div></div>
+<div style="padding:10px 16px;border-bottom:1px solid rgba(255,255,255,.05);"><div style="display:flex;justify-content:space-between;margin-bottom:5px;"><span style="color:#fff;font-size:.75rem;">Payment done</span><span style="color:#fcd34d;font-family:'DM Mono',monospace;font-size:.75rem;">~24%</span></div><div style="height:24px;background:rgba(2,128,144,.38);border-radius:3px;width:24%;"><span style="color:#fca5a5;font-size:.6rem;padding:0 6px;line-height:24px;">Coupon issue</span></div></div>
+<div style="padding:10px 16px;background:rgba(16,185,129,.1);"><div style="display:flex;justify-content:space-between;margin-bottom:5px;"><span style="color:#6ee7b7;font-size:.75rem;font-weight:700;">✓ Booking confirmed</span><span style="color:#6ee7b7;font-family:'DM Mono',monospace;font-size:.75rem;">~20%</span></div><div style="height:24px;background:rgba(16,185,129,.6);border-radius:3px;width:20%;"></div></div>
+</div>
+<div style="background:rgba(255,255,255,.04);border:1px solid rgba(244,162,97,.3);border-radius:14px;overflow:hidden;">
+<div style="background:rgba(244,162,97,.2);padding:14px 18px;border-bottom:1px solid rgba(255,255,255,.08);"><div style="color:var(--amber);font-size:.62rem;font-family:'DM Mono',monospace;">SERVICE 02</div><div style="color:#fff;font-weight:700;font-size:.9rem;margin-top:3px;">🩺 Consultation</div></div>
+<div style="padding:10px 16px;border-bottom:1px solid rgba(255,255,255,.05);"><div style="display:flex;justify-content:space-between;margin-bottom:5px;"><span style="color:#fff;font-size:.75rem;">Consult section opened</span><span style="color:#fff;font-family:'DM Mono',monospace;font-size:.75rem;">100%</span></div><div style="height:24px;background:rgba(244,162,97,.9);border-radius:3px;width:100%;"></div></div>
+<div style="padding:10px 16px;border-bottom:1px solid rgba(255,255,255,.05);"><div style="display:flex;justify-content:space-between;margin-bottom:5px;"><span style="color:#fff;font-size:.75rem;">Speciality or symptom picked</span><span style="color:#fcd34d;font-family:'DM Mono',monospace;font-size:.75rem;">~60%</span></div><div style="height:24px;background:rgba(244,162,97,.7);border-radius:3px;width:60%;"><span style="color:rgba(0,0,0,.5);font-size:.6rem;padding:0 6px;line-height:24px;">Unsure which speciality</span></div></div>
+<div style="padding:10px 16px;border-bottom:1px solid rgba(255,255,255,.05);"><div style="display:flex;justify-content:space-between;margin-bottom:5px;"><span style="color:#fff;font-size:.75rem;">Slot selected</span><span style="color:#fcd34d;font-family:'DM Mono',monospace;font-size:.75rem;">~32%</span></div><div style="height:24px;background:rgba(244,162,97,.4);border-radius:3px;width:32%;"><span style="color:#fca5a5;font-size:.6rem;padding:0 6px;line-height:24px;">Doctor not available</span></div></div>
+<div style="padding:10px 16px;background:rgba(16,185,129,.08);"><div style="display:flex;justify-content:space-between;margin-bottom:5px;"><span style="color:#6ee7b7;font-size:.75rem;font-weight:700;">✓ Consultation confirmed</span><span style="color:#6ee7b7;font-family:'DM Mono',monospace;font-size:.75rem;">~22%</span></div><div style="height:24px;background:rgba(16,185,129,.5);border-radius:3px;width:22%;"></div></div>
+<div style="padding:10px 16px;background:rgba(2,128,144,.08);"><div style="display:flex;justify-content:space-between;margin-bottom:5px;"><span style="color:rgba(255,255,255,.5);font-size:.75rem;">Test booked after consult ⭐</span><span style="color:#6ee7b7;font-family:'DM Mono',monospace;font-size:.75rem;">~5%</span></div><div style="height:24px;background:rgba(16,185,129,.3);border-radius:3px;width:5%;"></div><div style="color:var(--teal);font-size:.62rem;margin-top:4px;">Cross-service = high value user</div></div>
+</div>
+<div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.15);border-radius:14px;overflow:hidden;">
+<div style="background:rgba(27,42,74,.9);padding:14px 18px;border-bottom:1px solid rgba(255,255,255,.08);"><div style="color:rgba(255,255,255,.4);font-size:.62rem;font-family:'DM Mono',monospace;">SERVICE 03</div><div style="color:#fff;font-weight:700;font-size:.9rem;margin-top:3px;">🔬 Scan</div></div>
+<div style="padding:10px 16px;border-bottom:1px solid rgba(255,255,255,.05);"><div style="display:flex;justify-content:space-between;margin-bottom:5px;"><span style="color:#fff;font-size:.75rem;">Scans section opened</span><span style="color:#fff;font-family:'DM Mono',monospace;font-size:.75rem;">100%</span></div><div style="height:24px;background:rgba(255,255,255,.3);border-radius:3px;width:100%;"></div></div>
+<div style="padding:10px 16px;border-bottom:1px solid rgba(255,255,255,.05);"><div style="display:flex;justify-content:space-between;margin-bottom:5px;"><span style="color:#fff;font-size:.75rem;">Scan type selected</span><span style="color:#fcd34d;font-family:'DM Mono',monospace;font-size:.75rem;">~65%</span></div><div style="height:24px;background:rgba(255,255,255,.22);border-radius:3px;width:65%;"></div></div>
+<div style="padding:10px 16px;border-bottom:1px solid rgba(255,255,255,.05);"><div style="display:flex;justify-content:space-between;margin-bottom:5px;"><span style="color:#fff;font-size:.75rem;">Centre selected</span><span style="color:#fcd34d;font-family:'DM Mono',monospace;font-size:.75rem;">~45%</span></div><div style="height:24px;background:rgba(255,255,255,.16);border-radius:3px;width:45%;"><span style="color:#fca5a5;font-size:.6rem;padding:0 6px;line-height:24px;">No ratings on centres</span></div></div>
+<div style="padding:10px 16px;border-bottom:1px solid rgba(255,255,255,.05);"><div style="display:flex;justify-content:space-between;margin-bottom:5px;"><span style="color:#fff;font-size:.75rem;">Prescription uploaded</span><span style="color:#fcd34d;font-family:'DM Mono',monospace;font-size:.75rem;">~30%</span></div><div style="height:24px;background:rgba(255,255,255,.12);border-radius:3px;width:30%;"><span style="color:#fca5a5;font-size:.6rem;padding:0 6px;line-height:24px;">Not digital / not on phone</span></div></div>
+<div style="padding:10px 16px;background:rgba(16,185,129,.08);"><div style="display:flex;justify-content:space-between;margin-bottom:5px;"><span style="color:#6ee7b7;font-size:.75rem;font-weight:700;">✓ Scan booking confirmed</span><span style="color:#6ee7b7;font-family:'DM Mono',monospace;font-size:.75rem;">~22%</span></div><div style="height:24px;background:rgba(16,185,129,.45);border-radius:3px;width:22%;"></div></div>
+</div>
+</div>
+
+<!-- SIGN-UP FUNNEL -->
+<div style="font-family:'DM Mono',monospace;font-size:.72rem;color:var(--teal);text-transform:uppercase;letter-spacing:2px;margin-bottom:16px;">Sign-Up → First Booking — Why Sign-Up Alone Is a Vanity Metric</div>
+<div style="background:rgba(244,162,97,.12);border:1px solid var(--amber);border-radius:10px;padding:14px 20px;margin-bottom:24px;max-width:680px;">
+<div style="color:var(--amber);font-size:.78rem;font-weight:700;margin-bottom:4px;">Important context</div>
+<div style="color:rgba(255,255,255,.7);font-size:.78rem;line-height:1.5;">Sign-up is the starting line, not the finish. A user who signs up and never books has generated zero revenue and experienced zero value. The metric that matters is first booking completed.</div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border-radius:10px;overflow:hidden;max-width:100%;">
+<div style="background:rgba(2,128,144,.9);padding:18px 14px;text-align:center;"><div style="color:#fff;font-family:'DM Serif Display',serif;font-size:1.6rem;font-weight:700;">100%</div><div style="color:rgba(255,255,255,.8);font-size:.72rem;font-weight:600;margin-top:6px;">App Installed</div></div>
+<div style="background:rgba(2,128,144,.72);padding:18px 14px;text-align:center;"><div style="color:#fff;font-family:'DM Serif Display',serif;font-size:1.6rem;font-weight:700;">~60%</div><div style="color:rgba(255,255,255,.8);font-size:.72rem;font-weight:600;margin-top:6px;">Account Created</div></div>
+<div style="background:rgba(2,128,144,.54);padding:18px 14px;text-align:center;"><div style="color:#fff;font-family:'DM Serif Display',serif;font-size:1.6rem;font-weight:700;">~40%</div><div style="color:rgba(255,255,255,.8);font-size:.72rem;font-weight:600;margin-top:6px;">Service Browsed</div></div>
+<div style="background:rgba(2,128,144,.36);padding:18px 14px;text-align:center;"><div style="color:#fff;font-family:'DM Serif Display',serif;font-size:1.6rem;font-weight:700;">~25%</div><div style="color:rgba(255,255,255,.8);font-size:.72rem;font-weight:600;margin-top:6px;">Checkout Reached</div></div>
+<div style="background:rgba(16,185,129,.35);padding:18px 14px;text-align:center;"><div style="color:#6ee7b7;font-family:'DM Serif Display',serif;font-size:1.6rem;font-weight:700;">~20%</div><div style="color:#6ee7b7;font-size:.72rem;font-weight:600;margin-top:6px;">First Booking ✓</div><div style="color:rgba(255,255,255,.5);font-size:.62rem;margin-top:3px;">This is the real metric</div></div>
+</div>
+</div>
+</section>
 /* EVENT TREE */
 .et-tool{background:var(--navy);color:#fff;border-radius:20px;padding:6px 14px;font-size:.72rem;font-family:'DM Mono',monospace;}
 .et-tool span{color:var(--teal);}
