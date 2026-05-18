@@ -33,6 +33,7 @@ section{padding:80px 0;}
 .tab-btn.active{background:var(--teal);color:#fff;border-color:var(--teal);}
 .fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
 .fade-in.visible{opacity:1;transform:none;}
+.sample-note{font-size:.6rem;color:#92400e;background:rgba(244,162,97,.25);border:1px solid rgba(244,162,97,.4);font-weight:600;font-family:'DM Sans',sans-serif;display:inline-block;margin-top:4px;padding:1px 7px;border-radius:10px;letter-spacing:.3px;}
 /* HERO */
 #overview{padding:120px 0 80px;background:linear-gradient(135deg,#fff 60%,var(--bg) 100%);}
 .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
@@ -329,7 +330,6 @@ section{padding:80px 0;}
 .cf-api-table td:first-child{color:var(--teal);font-family:'DM Mono',monospace;font-size:.72rem;}
 .cf-api-table td:nth-child(2){color:rgba(255,255,255,.5);font-family:'DM Mono',monospace;font-size:.68rem;}
 .cf-api-table td:nth-child(3){color:rgba(255,255,255,.75);}
-.cf-api-table td:nth-child(4){color:rgba(255,255,255,.85);}
 /* METRICS */
 .metrics-categories{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-bottom:40px;}
 .metric-cat{background:#fff;border-radius:14px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,.06);}
@@ -1007,7 +1007,7 @@ footer strong{color:#fff;}
 <div class="p-sb"><span>9:41</span><span>📶🔋</span></div>
 <div class="p-hdr"><span class="p-hdr-t" style="color:var(--teal);">● Healthians Partner</span><span>🔔</span></div>
 <div style="padding:8px 12px;font-size:.72rem;color:var(--navy);">Good morning, Dr. Mehta 👋</div>
-<div class="p-stats-r"><div class="p-sm"><div class="n">3</div><div class="l">Today</div></div><div class="p-sm"><div class="n">47</div><div class="l">This Month</div></div><div class="p-sm"><div class="n">₹8,240</div><div class="l">Commission</div></div></div>
+<div class="p-stats-r"><div class="p-sm"><div class="n">3</div><div class="l">Today</div><span class="sample-note">sample</span></div><div class="p-sm"><div class="n">47</div><div class="l">This Month</div><span class="sample-note">sample</span></div><div class="p-sm"><div class="n">₹8,240</div><div class="l">Commission</div><span class="sample-note">sample</span></div></div>
 <div class="p-cta" style="margin:8px 12px;">+ Book a Test for a Patient</div>
 <div class="p-sec"><div class="p-sec-t">Today's Bookings</div></div>
 <div class="p-li"><div><div class="p-li-n">Ramesh Kumar</div><div class="p-li-t">Blood count · 7:00 AM</div></div><span class="sb sb-s">Booked</span></div>
@@ -1030,7 +1030,7 @@ footer strong{color:#fff;}
 <div class="p-sb"><span>9:41</span><span>📶🔋</span></div>
 <div class="p-hdr"><span class="p-back">‹</span><span class="p-hdr-t">My Commission</span></div>
 <div style="margin:6px 12px;background:#f5f5f5;border-radius:8px;padding:6px 12px;font-size:.7rem;color:var(--navy);text-align:center;">May 2026 ▾</div>
-<div class="p-earn-t"><div style="font-size:1.2rem;font-weight:700;">₹8,240</div><div style="font-size:.65rem;opacity:.8;">47 bookings this month</div></div>
+<div class="p-earn-t"><div style="font-size:1.2rem;font-weight:700;">₹8,240</div><div style="font-size:.65rem;opacity:.8;">47 bookings this month</div><span class="sample-note" style="color:rgba(255,255,255,.5);">sample data only</span></div>
 <div class="p-sec"><div class="p-sec-t">Breakdown</div></div>
 <div class="p-earn-row"><span>Thyroid × 14</span><span class="p-earn-a">₹588</span></div>
 <div class="p-earn-row"><span>Full Body × 8</span><span class="p-earn-a">₹1,792</span></div>
@@ -1133,20 +1133,91 @@ footer strong{color:#fff;}
 </div>
 </div>
 <div class="cf-shared">
-<div class="cf-shared-title">API Flow — Same Backend, Three Interfaces</div>
-<table class="cf-api-table">
-<thead><tr><th>Action</th><th>API Call</th><th>What Happens</th><th>Who Triggers</th></tr></thead>
-<tbody>
-<tr><td>Search test</td><td>GET /tests?city=pune</td><td>Returns test catalogue filtered by city</td><td>Patient App</td></tr>
-<tr><td>Get slots</td><td>GET /slots?date=2026-05-19</td><td>Returns available 15-min slots for that city and date</td><td>All three apps</td></tr>
-<tr><td>Create booking</td><td>POST /booking</td><td>Slot reserved, sample collector assigned, confirmation sent</td><td>All three apps</td></tr>
-<tr><td>Sample collector en route</td><td>PATCH /booking/{id} dispatched</td><td>Patient gets WhatsApp with name and arrival time</td><td>Sample collector interface</td></tr>
-<tr><td>Sample collected</td><td>PATCH /booking/{id} collected</td><td>Barcode scanned. Temperature tracking begins. Status updates in all apps.</td><td>Sample collector interface</td></tr>
-<tr><td>Report ready</td><td>POST /report</td><td>Push + WhatsApp + Email to patient. Doctor portal updated. Partner can download.</td><td>Report system</td></tr>
-<tr><td>Doctor views report</td><td>GET /report/{id}</td><td>Same report delivered via doctor interface</td><td>Doctor App</td></tr>
-<tr><td>Partner downloads</td><td>GET /report/{id}?partner_id=xyz</td><td>Same report, partner-permissioned access</td><td>Partner App</td></tr>
-</tbody>
-</table>
+<div class="cf-shared-title">API Flow — What Each App Calls and What It Gets Back</div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-radius:10px;overflow:hidden;">
+
+<!-- PATIENT APP -->
+<div style="padding:20px;border-right:1px solid rgba(255,255,255,.08);">
+<div style="font-family:'DM Mono',monospace;font-size:.68rem;color:var(--teal);text-transform:uppercase;letter-spacing:1px;margin-bottom:16px;">📱 Patient App</div>
+<div style="display:flex;flex-direction:column;gap:12px;">
+<div style="background:rgba(255,255,255,.05);border-radius:8px;padding:12px;">
+<div style="font-family:'DM Mono',monospace;font-size:.68rem;color:var(--teal);">GET /tests?city=pune</div>
+<div style="font-size:.72rem;color:rgba(255,255,255,.5);margin-top:3px;">User searches or browses</div>
+<div style="font-size:.75rem;color:rgba(255,255,255,.8);margin-top:6px;">↩ Test catalogue filtered by city and availability</div>
+</div>
+<div style="background:rgba(255,255,255,.05);border-radius:8px;padding:12px;">
+<div style="font-family:'DM Mono',monospace;font-size:.68rem;color:var(--teal);">GET /slots?city=pune&date=...</div>
+<div style="font-size:.72rem;color:rgba(255,255,255,.5);margin-top:3px;">User selects a date</div>
+<div style="font-size:.75rem;color:rgba(255,255,255,.8);margin-top:6px;">↩ Available 15-min slots for that city and date</div>
+</div>
+<div style="background:rgba(255,255,255,.05);border-radius:8px;padding:12px;">
+<div style="font-family:'DM Mono',monospace;font-size:.68rem;color:var(--teal);">POST /booking</div>
+<div style="font-size:.72rem;color:rgba(255,255,255,.5);margin-top:3px;">User taps Confirm & Pay</div>
+<div style="font-size:.75rem;color:rgba(255,255,255,.8);margin-top:6px;">↩ Booking ID, slot reserved, WhatsApp confirmation sent</div>
+</div>
+<div style="background:rgba(255,255,255,.05);border-radius:8px;padding:12px;">
+<div style="font-family:'DM Mono',monospace;font-size:.68rem;color:var(--teal);">GET /report/{id}</div>
+<div style="font-size:.72rem;color:rgba(255,255,255,.5);margin-top:3px;">User taps on report in app</div>
+<div style="font-size:.75rem;color:rgba(255,255,255,.8);margin-top:6px;">↩ Full report with parameters, values, Normal / High / Low labels</div>
+</div>
+</div>
+</div>
+
+<!-- PARTNER APP -->
+<div style="padding:20px;border-right:1px solid rgba(255,255,255,.08);">
+<div style="font-family:'DM Mono',monospace;font-size:.68rem;color:var(--teal);text-transform:uppercase;letter-spacing:1px;margin-bottom:16px;">🤝 Partner App</div>
+<div style="display:flex;flex-direction:column;gap:12px;">
+<div style="background:rgba(255,255,255,.05);border-radius:8px;padding:12px;">
+<div style="font-family:'DM Mono',monospace;font-size:.68rem;color:var(--teal);">GET /tests?city=nashik</div>
+<div style="font-size:.72rem;color:rgba(255,255,255,.5);margin-top:3px;">Partner searches for a test to book</div>
+<div style="font-size:.75rem;color:rgba(255,255,255,.8);margin-top:6px;">↩ Full test catalogue to show patient options</div>
+</div>
+<div style="background:rgba(255,255,255,.05);border-radius:8px;padding:12px;">
+<div style="font-family:'DM Mono',monospace;font-size:.68rem;color:var(--teal);">GET /slots?city=nashik&date=...</div>
+<div style="font-size:.72rem;color:rgba(255,255,255,.5);margin-top:3px;">Partner selects a time for patient</div>
+<div style="font-size:.75rem;color:rgba(255,255,255,.8);margin-top:6px;">↩ Available slots in patient's city</div>
+</div>
+<div style="background:rgba(255,255,255,.05);border-radius:8px;padding:12px;">
+<div style="font-family:'DM Mono',monospace;font-size:.68rem;color:var(--teal);">POST /booking</div>
+<div style="font-size:.72rem;color:rgba(255,255,255,.5);margin-top:3px;">Partner confirms booking on behalf of patient</div>
+<div style="font-size:.75rem;color:rgba(255,255,255,.8);margin-top:6px;">↩ Booking ID, patient notified via SMS, commission logged</div>
+</div>
+<div style="background:rgba(255,255,255,.05);border-radius:8px;padding:12px;">
+<div style="font-family:'DM Mono',monospace;font-size:.68rem;color:var(--teal);">GET /report/{id}?partner_id=xyz</div>
+<div style="font-size:.72rem;color:rgba(255,255,255,.5);margin-top:3px;">Partner taps Download Report</div>
+<div style="font-size:.75rem;color:rgba(255,255,255,.8);margin-top:6px;">↩ Same report, partner-permissioned access — PDF download</div>
+</div>
+</div>
+</div>
+
+<!-- DOCTOR APP -->
+<div style="padding:20px;">
+<div style="font-family:'DM Mono',monospace;font-size:.68rem;color:var(--teal);text-transform:uppercase;letter-spacing:1px;margin-bottom:16px;">🩺 Doctor App</div>
+<div style="display:flex;flex-direction:column;gap:12px;">
+<div style="background:rgba(255,255,255,.05);border-radius:8px;padding:12px;">
+<div style="font-family:'DM Mono',monospace;font-size:.68rem;color:var(--teal);">GET /appointments?doctor_id=...</div>
+<div style="font-size:.72rem;color:rgba(255,255,255,.5);margin-top:3px;">Doctor opens appointment list</div>
+<div style="font-size:.75rem;color:rgba(255,255,255,.8);margin-top:6px;">↩ Upcoming consultations with patient name, time, reason</div>
+</div>
+<div style="background:rgba(255,255,255,.05);border-radius:8px;padding:12px;">
+<div style="font-family:'DM Mono',monospace;font-size:.68rem;color:var(--teal);">GET /patient/{id}/reports</div>
+<div style="font-size:.72rem;color:rgba(255,255,255,.5);margin-top:3px;">Doctor opens a patient profile</div>
+<div style="font-size:.75rem;color:rgba(255,255,255,.8);margin-top:6px;">↩ Full test history — all past reports for that patient in order</div>
+</div>
+<div style="background:rgba(255,255,255,.05);border-radius:8px;padding:12px;">
+<div style="font-family:'DM Mono',monospace;font-size:.68rem;color:var(--teal);">GET /report/{id}</div>
+<div style="font-size:.72rem;color:rgba(255,255,255,.5);margin-top:3px;">Doctor views latest report during consultation</div>
+<div style="font-size:.75rem;color:rgba(255,255,255,.8);margin-top:6px;">↩ Report auto-delivered when ready — doctor sees without patient carrying it</div>
+</div>
+<div style="background:rgba(255,255,255,.05);border-radius:8px;padding:12px;">
+<div style="font-family:'DM Mono',monospace;font-size:.68rem;color:var(--teal);">POST /prescription</div>
+<div style="font-size:.72rem;color:rgba(255,255,255,.5);margin-top:3px;">Doctor sends prescription in chat</div>
+<div style="font-size:.75rem;color:rgba(255,255,255,.8);margin-top:6px;">↩ Prescription saved to patient profile, delivered via chat</div>
+</div>
+</div>
+</div>
+
+</div>
 </div>
 </div>
 </section>
@@ -1396,7 +1467,8 @@ footer strong{color:#fff;}
 <div class="wrap">
 <p class="sec-label" style="color:var(--teal);">Section 17</p>
 <h2 class="sec-title" style="color:#fff;margin-bottom:8px;">Conversion Funnels</h2>
-<p style="color:rgba(255,255,255,.6);font-size:.88rem;max-width:640px;line-height:1.6;margin-bottom:48px;">Four funnels — each answers a different question. Numbers are directional estimates based on industry benchmarks, not Healthians internal data.</p>
+<p style="color:rgba(255,255,255,.6);font-size:.88rem;max-width:640px;line-height:1.6;margin-bottom:8px;">Four funnels — each answers a different question.</p>
+<p style="color:rgba(255,255,255,.4);font-size:.75rem;font-style:italic;margin-bottom:40px;">All percentages and numbers shown are sample data for illustration purposes only — not actual Healthians data.</p>
 
 <!-- AARRR LIFECYCLE -->
 <div style="font-family:'DM Mono',monospace;font-size:.72rem;color:var(--teal);text-transform:uppercase;letter-spacing:2px;margin-bottom:20px;">1 — AARRR Lifecycle Framework</div>
@@ -1657,6 +1729,7 @@ footer strong{color:#fff;}
 <p class="sec-label">Section 19</p>
 <h2 class="sec-title">Cohort Analysis</h2>
 <p class="sec-desc">A cohort groups users by when they first did something key, then tracks how many are still active later. D30 retention as one number is misleading for Healthians. These cohorts tell a more accurate story.</p>
+<p style="font-size:.75rem;color:#aaa;font-style:italic;margin-bottom:32px;">All numbers shown are sample data for illustration purposes only — not actual Healthians data.</p>
 <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:40px;">
 <div class="ckpi"><div class="ckpi-val">~26%</div><div class="ckpi-label">D1 Retention</div><div class="ckpi-note">Health apps industry median</div></div>
 <div class="ckpi"><div class="ckpi-val">~3%</div><div class="ckpi-label">D30 Retention</div><div class="ckpi-note">Misleading without segmentation</div></div>
